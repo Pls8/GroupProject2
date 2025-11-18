@@ -75,7 +75,7 @@ Select the number corresponding to the action you want to perform.
 
 ---
 
-## File Structure (ASCII)
+## File Structure
 
 ```
 HomeRepairConsole/
