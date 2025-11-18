@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Home Fix Repair - Reports</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="./static/CSS/styles.css" rel="stylesheet" />
+      <link rel="icon" href="./img/logo2.png">
+</head>
+<body>
+<div class="hf-layout">
+    <aside class="hf-sidebar">
+        <div class="hf-logo-box">
+           <img src="./img/5.PNG" alt="Home Fix Repair Logo" style="width:70px; height:auto;">
+
+            <div class="text-center text-lg-start">
+                <div class="hf-logo-title">HOME FIX REPAIR</div>
+                <div style="font-size: 0.7rem; color:#c4b5fd;">Home Appliance Repair System</div>
+            </div>
+        </div>
+        <ul class="hf-nav">
+            <li><a href="index.html"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a></li>
+            <li><a href="customers.html"><i class="bi bi-people"></i><span>Customers</span></a></li>
+            <li><a href="technicians.html"><i class="bi bi-person-gear"></i><span>Technicians</span></a></li>
+            <li><a href="orders.html"><i class="bi bi-wrench-adjustable-circle"></i><span>Repair Orders</span></a></li>
+            <li><a href="invoices.html"><i class="bi bi-receipt"></i><span>Invoices</span></a></li>
+            <li><a class="active" href="reports.html"><i class="bi bi-bar-chart-line"></i><span>Reports</span></a></li>
+        </ul>
+        <div class="hf-sidebar-footer">Reports module</div>
+    </aside>
+
+    <main class="hf-main">
+        <div class="hf-page-header">
+            <div>
+                <h1>Reports</h1>
+                <div class="text-muted">High-level overview: status, technicians, and date filters.</div>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <!-- Orders by status chart (static) -->
+            <div class="col-lg-6">
+                <div class="hf-card p-3">
+                    <h5 class="mb-3">Orders by Status</h5>
+                    <div class="mb-2 d-flex justify-content-between align-items-center">
+                        <span class="hf-label">Pending</span>
+                        <span class="text-muted">12</span>
+                    </div>
+                    <div class="hf-status-bar mb-3">
+                        <div class="hf-status-bar-inner" style="width: 45%;"></div>
+                    </div>
+
+                    <div class="mb-2 d-flex justify-content-between align-items-center">
+                        <span class="hf-label">In Progress</span>
+                        <span class="text-muted">8</span>
+                    </div>
+                    <div class="hf-status-bar mb-3">
+                        <div class="hf-status-bar-inner" style="width: 30%;"></div>
+                    </div>
+
+                    <div class="mb-2 d-flex justify-content-between align-items-center">
+                        <span class="hf-label">Completed</span>
+                        <span class="text-muted">96</span>
+                    </div>
+                    <div class="hf-status-bar mb-3">
+                        <div class="hf-status-bar-inner" style="width: 80%;"></div>
+                    </div>
+
+                    <div class="mb-2 d-flex justify-content-between align-items-center">
+                        <span class="hf-label">Cancelled</span>
+                        <span class="text-muted">4</span>
+                    </div>
+                    <div class="hf-status-bar mb-2">
+                        <div class="hf-status-bar-inner" style="width: 15%;"></div>
+                    </div>
+
+                    <small class="text-muted">Bars are static for design only – later you can bind them to query results.</small>
+                </div>
+            </div>
+
+            <!-- Technician workload table -->
+            <div class="col-lg-6">
+                <div class="hf-card p-3">
+                    <h5 class="mb-3">Technician Workload</h5>
+                    <table class="table table-hover table-sm align-middle mb-0">
+                        <thead>
+                        <tr>
+                            <th>Technician</th>
+                            <th>Pending</th>
+                            <th>In Progress</th>
+                            <th>Completed</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Ali Technician</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>Maha Technician</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Salim Technician</td>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>10</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <small class="text-muted d-block mt-2">Example data – perfect for future GROUP BY queries.</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter orders by date -->
+        <div class="hf-card p-3">
+            <h5 class="mb-3">Filter Orders by Date</h5>
+            <form class="row g-3 mb-3">
+                <div class="col-md-4">
+                    <label class="form-label">From date</label>
+                    <input type="date" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">To date</label>
+                    <input type="date" class="form-control" />
+                </div>
+                <div class="col-md-4 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="bi bi-funnel me-1"></i> Filter
+                    </button>
+                </div>
+            </form>
+
+            <table class="table table-sm align-middle mb-0">
+                <thead>
+                <tr>
+                    <th>Order</th>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Status</th>
+                    <th>Total (OMR)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>#1043</td>
+                    <td>2025-11-11</td>
+                    <td>Ahmed Ali</td>
+                    <td><span class="badge bg-success">Completed</span></td>
+                    <td>38.000</td>
+                </tr>
+                <tr>
+                    <td>#1042</td>
+                    <td>2025-11-10</td>
+                    <td>Fatma Saeed</td>
+                    <td><span class="badge bg-info text-dark">In Progress</span></td>
+                    <td>22.500</td>
+                </tr>
+                </tbody>
+            </table>
+            <small class="text-muted d-block mt-2">In the real app, this table will refresh according to the selected date range.</small>
+        </div>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
